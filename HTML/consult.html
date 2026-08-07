@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Turnos</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="logo-container">
+                <img src="../images/logoCirculo.png" alt="Logo Atmosferico EL TATA">
+                <h1 class="brand-name">Atmosferico "EL TATA"</h1>
+                <p class="brand-tagline">Sistema de Turnos Online</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="glass-card">
+                <h2>Consultar Turnos</h2>
+                <p class="subtitle">Ingresa tu DNI para consultar el estado de tu solicitud</p>
+                <form action="consult.html" method="post">
+                    <div class="form-group">
+                        <input type="number"  id="dni" name="dni" required>
+                        <label for="dni">Número de DNI:</label>
+                    </div>
+                    <button type="submit" class="btn-submit">Consultar</button>
+                </form>
+                <div class="btn-home">
+                    <button class="btn" onclick="window.location.href='index.html'">Cancelar</button>
+                </div>
+                <div class="copyright">
+                    <h6>&copy; 2026 <a href="https://juanboyero-dev.netlify.app/" target="_blank">JuanBoyeroDev</a>. Todos los derechos reservados.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
