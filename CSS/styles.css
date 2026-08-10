@@ -242,6 +242,8 @@ body {
   box-shadow: 0 12px 35px rgba(232, 183, 92, 0.5);
 }
 
+ 
+
 /* Form Styles */
 .form-group {
   position: relative;
@@ -298,6 +300,58 @@ body {
 
 .form-group input::placeholder {
   color: var(--blanco-70);
+}
+
+/* Select Styles */
+.form-group select {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  border: 2px solid var(--blanco-20);
+  border-radius: 12px;
+  background: var(--blanco-20);
+  color: var(--blanco);
+  transition: all 0.3s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+.form-group select:focus {
+  border-color: var(--blanco-70);
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.form-group select option {
+  background: var(--dorado-claro);
+  color: var(--texto);
+  padding: 12px;
+}
+
+.form-group select:hover {
+  border-color: var(--blanco-70);
+}
+
+.form-group label {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  font-size: 0.8rem;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--dorado), var(--naranja));
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0 8px;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 /* Submit Button */
@@ -408,7 +462,7 @@ body {
     min-height: 35vh;
     padding: 25px 20px;
   }
-
+  
   .logo-container img {
     width: 140px;
     height: 140px;
@@ -417,6 +471,7 @@ body {
   .brand-name {
     font-size: 1.3rem;
     margin-top: 20px;
+    font-style: Monserrat, sans-serif;
   }
 
   .brand-tagline {
