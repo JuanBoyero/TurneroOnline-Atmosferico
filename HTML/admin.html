@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="logo-container">
+                <img src="../images/logoCirculo.png" alt="Logo Atmosferico EL TATA">
+                <h1 class="brand-name">Atmosferico "EL TATA"</h1>
+                <p class="brand-tagline">Panel de Administración</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="glass-card">
+                <h2>Gestionar Turnos</h2>
+                <p class="subtitle">Seleccioná una localidad para ver los turnos</p>
+
+                <div class="form-group">
+                    <select id="localidad-select">
+                        <option value="" disabled selected>Seleccionar Localidad</option>
+                        <option value="Mattaldi">Mattaldi</option>
+                        <option value="Jovita">Jovita</option>
+                    </select>
+                    <label for="localidad-select">Localidad:</label>
+                </div>
+
+                <div id="tabla-container" style="display: none;">
+                    <table class="turnos-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="turnos-body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btn-home">
+                    <button class="btn" onclick="window.location.href='index.html'">Volver al Inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para registrar trabajo -->
+    <div id="modal-trabajo" class="modal-overlay">
+        <div class="modal-card glass-card">
+            <h2>Registrar Trabajo</h2>
+            <p class="subtitle" id="modal-info"></p>
+
+            <div class="form-group">
+                <label id="label-tarifa-aros">Costo Aros: -</label>
+            </div>
+            <div class="form-group">
+                <label id="label-tarifa-tanques">Costo Tanques: -</label>
+            </div>
+
+            <div class="form-group">
+                <input type="number" id="cantidad-aros" min="0" value="0">
+                <label for="cantidad-aros">Cantidad de Aros:</label>
+            </div>
+
+            <div class="form-group">
+                <input type="number" id="cantidad-tanques" min="0" value="0">
+                <label for="cantidad-tanques">Cantidad de Tanques:</label>
+            </div>
+
+            <p class="total-label" id="total-cost">Total: $0</p>
+
+            <button class="btn-submit" id="confirmar-trabajo">Confirmar y Marcar Completado</button>
+            <button class="btn" style="margin-top: 10px;" onclick="document.getElementById('modal-trabajo').style.display='none'">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div id="modal-exito" class="modal-overlay">
+        <div class="modal-card glass-card">
+            <h2>Trabajo Registrado</h2>
+            <p class="subtitle">El turno fue marcado como completado exitosamente.</p>
+            <button class="btn-submit" onclick="window.location.reload()">Entendido</button>
+        </div>
+    </div>
+
+    <script>
+    if (!sessionStorage.getItem("adminAuth")) {
+        window.location.href = "index.html";
+    }
+    </script>
+    <script src="../JS/admin.js"></script>
+</body>
+</html>

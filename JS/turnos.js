@@ -6,7 +6,7 @@ const turno = {
     telefono: null,
 }
 
-const URL_SHEETS = "https://script.google.com/macros/s/AKfycbzTSIlbVECkiJ94x0xPubHSoQqqwRRDtJ289y5Vt_uj7y5lhdfGIgH1WqBnmwYY2tTr/exec";
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbwMfcFTgzZLcuZJLi6TMg8hUPdTEbYivfWWbjSBjEBIuJKWwvUCCKsIhjkr-6zKWSph/exec";
 
 function guardarTurno() {
     turno.nombre = document.getElementById("nombre").value;

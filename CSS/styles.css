@@ -426,6 +426,30 @@ body {
   text-decoration: underline;
 }
 
+/* Botón Administración */
+.btn-admin {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--blanco-70);
+  background: transparent;
+  border: 1px solid var(--blanco-20);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.btn-admin:hover {
+  color: var(--blanco);
+  border-color: var(--blanco-70);
+  background: var(--blanco-20);
+}
+
 /* Modal */
 .modal-overlay {
   display: none;
@@ -455,6 +479,58 @@ body {
 .modal-overlay .subtitle {
   color: var(--blanco-90);
   font-size: 0.95rem;
+}
+
+/* Tabla de turnos */
+.turnos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.turnos-table th,
+.turnos-table td {
+  padding: 12px 8px;
+  text-align: left;
+  color: var(--blanco);
+  border-bottom: 1px solid var(--blanco-20);
+  font-size: 0.85rem;
+}
+
+.turnos-table th {
+  font-weight: 600;
+  color: var(--dorado);
+  border-bottom: 2px solid var(--dorado);
+}
+
+.turnos-table tr:hover {
+  background: var(--blanco-20);
+}
+
+.btn-completar {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--blanco);
+  background: linear-gradient(135deg, var(--dorado), var(--naranja));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-completar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 183, 92, 0.4);
+}
+
+.total-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dorado);
+  text-align: center;
+  margin: 20px 0;
 }
 
 /* Responsive - Tablet */
