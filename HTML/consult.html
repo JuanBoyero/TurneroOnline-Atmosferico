@@ -18,16 +18,30 @@
         <div class="right-panel">
             <div class="glass-card">
                 <h2>Consultar Turnos</h2>
-                <p class="subtitle">Ingresa tu DNI para consultar el estado de tu solicitud</p>
-                <form action="consult.html" method="post">
-                    <div class="form-group">
-                        <input type="number"  id="dni" name="dni" required>
-                        <label for="dni">Número de DNI:</label>
-                    </div>
-                    <button type="submit" class="btn-submit">Consultar</button>
-                </form>
+                <p class="subtitle">Ingresa tu DNI y localidad para consultar tus turnos</p>
+
+                <div class="form-group">
+                    <input type="number" id="dni" name="dni" required>
+                    <label for="dni">Número de DNI:</label>
+                </div>
+
+                <div class="form-group">
+                    <select id="localidad" name="localidad" required>
+                        <option value="" disabled selected>Seleccionar Localidad</option>
+                        <option value="Mattaldi">Mattaldi</option>
+                        <option value="Jovita">Jovita</option>
+                    </select>
+                    <label for="localidad">Localidad:</label>
+                </div>
+
+                <button class="btn-submit" id="btn-consultar">Consultar</button>
+
+                <div id="resultados" style="display: none; margin-top: 25px;">
+                    <div class="resultado-card" id="resultado-contenido"></div>
+                </div>
+
                 <div class="btn-home">
-                    <button class="btn" onclick="window.location.href='index.html'">Cancelar</button>
+                    <button class="btn" onclick="window.location.href='index.html'">Volver al Inicio</button>
                 </div>
                 <div class="copyright">
                     <h6>&copy; 2026 <a href="https://juanboyero-dev.netlify.app/" target="_blank">JuanBoyeroDev</a>. Todos los derechos reservados.</h6>
@@ -35,5 +49,6 @@
             </div>
         </div>
     </div>
+    <script src="../JS/consult.js"></script>
 </body>
 </html>

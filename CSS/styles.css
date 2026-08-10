@@ -426,6 +426,36 @@ body {
   text-decoration: underline;
 }
 
+/* Resultado de consulta */
+.turno-resultado {
+  background: var(--blanco-20);
+  border: 1px solid var(--blanco-70);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.turno-resultado p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--blanco);
+}
+
+.turno-resultado strong {
+  color: var(--dorado);
+  font-size: 1rem;
+}
+
+.sin-resultados {
+  color: var(--blanco-70);
+  text-align: center;
+  font-style: italic;
+}
+
+.estado-Pendiente-de-Confirmacion { color: var(--naranja); font-weight: 600; }
+.estado-Pendiente { color: var(--dorado); font-weight: 600; }
+.estado-Completado { color: #48bb78; font-weight: 600; }
+
 /* Botón Administración */
 .btn-admin {
   position: absolute;
