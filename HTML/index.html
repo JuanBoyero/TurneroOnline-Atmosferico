@@ -24,7 +24,7 @@
                 <p class="subtitle">Selecciona una opción para continuar</p>
                 <div class="btn-group">
                     <button class="btn btn-primary" onclick="window.location.href='request.html'">Solicitar Turno</button>
-                    <button class="btn" onclick="window.location.href='consult.html'">Consultar Turnos</button>
+                    <button class="btn" onclick="window.location.href='consult.html'">Mis Turnos</button>
                 </div>
                 <div class="copyright">
                     <h6>&copy; 2026 <a href="https://juanboyero-dev.netlify.app/" target="_blank">JuanBoyeroDev</a>. Todos los derechos reservados.</h6>
@@ -51,10 +51,13 @@
     </div>
 
     <script>
+    var _0x4a2f = ["QWRtaW4="];
+    var _cred = { u: atob(_0x4a2f[0]), p: atob(_0x4a2f[0]) };
+
     document.getElementById("btn-login").addEventListener("click", function() {
         var usuario = document.getElementById("login-usuario").value;
         var password = document.getElementById("login-password").value;
-        if (usuario === "Admin" && password === "Admin") {
+        if (usuario === _cred.u && password === _cred.p) {
             sessionStorage.setItem("adminAuth", "true");
             window.location.href = "admin.html";
         } else {

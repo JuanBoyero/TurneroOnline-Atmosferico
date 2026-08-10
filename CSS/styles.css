@@ -452,6 +452,12 @@ body {
   font-style: italic;
 }
 
+.loading-text {
+  color: var(--dorado);
+  text-align: center;
+  font-style: italic;
+}
+
 .estado-Pendiente-de-Confirmacion { color: var(--naranja); font-weight: 600; }
 .estado-Pendiente { color: var(--dorado); font-weight: 600; }
 .estado-Completado { color: #48bb78; font-weight: 600; }

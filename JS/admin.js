@@ -19,34 +19,36 @@ document.getElementById("localidad-select").addEventListener("change", function(
 });
 
 function cargarTurnos() {
+    const tbody = document.getElementById("turnos-body");
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--blanco-70);">Cargando turnos...</td></tr>`;
+    document.getElementById("tabla-container").style.display = "block";
+
     fetch(`${URL_SHEETS}?localidad=${localidadSeleccionada}`)
         .then(response => response.json())
         .then(data => {
-            const tbody = document.getElementById("turnos-body");
             tbody.innerHTML = "";
 
             const turnosNoCompletados = data.turnos.filter(t => t.estado !== "Completado");
 
             if (turnosNoCompletados.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--blanco-70);">No hay turnos pendientes</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--blanco-70);">No hay turnos pendientes</td></tr>`;
             } else {
                 turnosNoCompletados.forEach(turno => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td>${turno.nombre}</td>
-                        <td>${turno.telefono}</td>
                         <td>${turno.direccion}</td>
+                        <td>${turno.telefono}</td>
+                        <td>${turno.localidad}</td>
                         <td><button class="btn-completar" onclick='abrirModal(${JSON.stringify(turno)})'>Completar</button></td>
                     `;
                     tbody.appendChild(row);
                 });
             }
-
-            document.getElementById("tabla-container").style.display = "block";
         })
         .catch(error => {
             console.error("Error al cargar turnos:", error);
-            alert("Error al cargar los turnos. Intentá de nuevo.");
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--blanco-70);">Error al cargar. Intentá de nuevo.</td></tr>`;
         });
 }
 

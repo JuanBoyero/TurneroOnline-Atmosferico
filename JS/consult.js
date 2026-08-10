@@ -9,13 +9,20 @@ document.getElementById("btn-consultar").addEventListener("click", function() {
         return;
     }
 
+    if (!/^\d{8}$/.test(dni)) {
+        alert("El DNI debe contener exactamente 8 números.");
+        return;
+    }
+
+    var container = document.getElementById("resultado-contenido");
+    var resultadosDiv = document.getElementById("resultados");
+    container.innerHTML = `<p class="loading-text">Buscando turnos...</p>`;
+    resultadosDiv.style.display = "block";
+
     fetch(`${URL_SHEETS}?localidad=${localidad}`)
         .then(response => response.json())
         .then(data => {
             var turnosFiltrados = data.turnos.filter(t => t.dni == dni);
-
-            var container = document.getElementById("resultado-contenido");
-            var resultadosDiv = document.getElementById("resultados");
 
             if (turnosFiltrados.length === 0) {
                 container.innerHTML = `<p class="sin-resultados">No se encontraron turnos para ese DNI en ${localidad}.</p>`;
@@ -35,11 +42,9 @@ document.getElementById("btn-consultar").addEventListener("click", function() {
                 });
                 container.innerHTML = html;
             }
-
-            resultadosDiv.style.display = "block";
         })
         .catch(error => {
             console.error("Error al consultar turnos:", error);
-            alert("Error al consultar. Intentá de nuevo.");
+            container.innerHTML = `<p class="sin-resultados">Error al consultar. Intentá de nuevo.</p>`;
         });
 });
